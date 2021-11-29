@@ -52,7 +52,6 @@ ap.add_argument(
 )
 args = vars(ap.parse_args())
 
-# Loading model from opensource API
 print("[INFO] Loading model...")
 
 net = cv2.dnn.readNet(
@@ -67,7 +66,8 @@ def midpoint(ptA, ptB):
 
 # Opening Cam
 print("[INFO] starting video stream...")
-vs = VideoStream(src=0).start()
+src=0
+vs = VideoStream(src).start()
 time.sleep(2.0)
 
 # Starting FPS Count
